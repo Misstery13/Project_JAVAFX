@@ -32,6 +32,6 @@ public class FXMLagendaController extends Application {
     try {
         //abrir formulario principal
         String directorio="/Vistas/";
-        String formulario=directorio+"FXMLAgenda.fxml";
+        String formulario=directorio+"FXMLagenda.fxml";
     }
 }

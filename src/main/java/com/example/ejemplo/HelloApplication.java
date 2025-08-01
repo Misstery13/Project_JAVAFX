@@ -1,5 +1,7 @@
 package com.example.ejemplo;
 
+import Modulos.Persona;
+import Modulos.Telefono;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -17,6 +19,7 @@ public class HelloApplication extends Application {
             Scene scene = new Scene(ventana);
 //        stage.setTitle("Hello!");
             stage.setScene(scene);
+            stage.setResizable(false);
             stage.show();
         } catch (IOException e) {
             System.out.println(e.getMessage());
@@ -24,5 +27,12 @@ public class HelloApplication extends Application {
     }
     public static void main(String[] args) {
         launch();
+        Persona objPersona = new Persona("0101010101", "Jaime", "Salinas");
+        System.out.println("Cédula: " + objPersona.getCedula());
+        System.out.println("Nombres: " + objPersona.getNombres());
+        System.out.println("Dirección: " + objPersona.getDireccion());
+        Telefono objTelefono = new Telefono("CNT", "987654321");
+        objPersona.addTelefonos(objTelefono);
+        System.out.println("TELEFONO: "+ objPersona.getTelefonos());
     }
 }
