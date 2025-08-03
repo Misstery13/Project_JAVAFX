@@ -1,14 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="Vistas.FXMLTelefono"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Vistas.FXMLTelefono">
+   <children>
+      <ComboBox fx:id="cbo_lista" layoutX="158.0" layoutY="48.0" prefHeight="25.0" prefWidth="284.0" />
+      <Label layoutX="105.0" layoutY="128.0" text="OPERADORA" />
+      <Label layoutX="105.0" layoutY="196.0" text="NUMERO" />
+      <TextField fx:id="txt_ope" layoutX="197.0" layoutY="124.0" />
+      <TextField fx:id="txt_num" layoutX="197.0" layoutY="192.0" />
+      <Pane layoutY="324.0" prefHeight="125.0" prefWidth="600.0">
+         <children>
+            <Button fx:id="btn_guardar" alignment="BOTTOM_CENTER" contentDisplay="BOTTOM" layoutX="131.0" layoutY="29.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="82.0" text="GUARDAR">
+               <graphic>
+                  <ImageView fitHeight="38.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../ICONS/guardar-el-archivo.png" />
+                     </image></ImageView>
+               </graphic></Button>
+            <Button fx:id="btn_salir" contentDisplay="BOTTOM" layoutX="396.0" layoutY="29.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="82.0" text="SALIR">
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../ICONS/logout.png" />
+                     </image></ImageView>
+               </graphic></Button>
+         </children>
+      </Pane>
+   </children>
 </AnchorPane>
