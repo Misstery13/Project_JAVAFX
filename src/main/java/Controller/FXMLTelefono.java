@@ -1,10 +1,16 @@
 package Controller;
 
+import General.BD;
+import Modelos.Persona;
+import Modelos.Telefono;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+
+import java.net.URL;
+import java.util.ResourceBundle;
 
 public class FXMLTelefono
 {
@@ -17,10 +23,12 @@ public class FXMLTelefono
     @javafx.fxml.FXML
     private Button btn_guardar;
     @javafx.fxml.FXML
-    private ComboBox cbo_lista;
+    private ComboBox<Persona> cbo_lista;
 
     @javafx.fxml.FXML
-    public void initialize() {
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        // Inicializar el ComboBox con las personas
+        this.cargarPersonas();
     }
 
     @javafx.fxml.FXML
@@ -34,15 +42,17 @@ public class FXMLTelefono
     public void acc_btnguardar(ActionEvent actionEvent) {
         try {
             if (fun_validar()) {
-                String numero = this.txt_num.getText();
-                String operador = this.txt_ope.getText();
+                Telefono objTelefono=new Telefono(this.txt_ope.getText(), this.txt_num.getText());
                 // Aquí se debería agregar el código para guardar el teléfono
-                System.out.println("Teléfono guardado: " + numero + " - " + operador);
+
+                this.cbo_lista.getSelectionModel().getSelectedItem().addTelefonos(objTelefono);
+                General.Mod_general.fun_mensajeInformacion("Se registro con exito");
+                this.fun_limpiar();
             } else {
                 System.out.println("Datos sin validar");
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            General.Mod_general.fun_mensajeError(e.getMessage());
         }
     }
 
@@ -53,5 +63,19 @@ public class FXMLTelefono
     @javafx.fxml.FXML
     public void acc_lista(ActionEvent actionEvent) {
 
+    }
+    public void cargarPersonas() {
+        try {
+            //cargar las personas al combobox
+            this.cbo_lista.getItems().addAll(BD.personas);
+        } catch (Exception e) {
+            General.Mod_general.fun_mensajeInformacion(e.getMessage());
+        }
+    }
+    public void fun_limpiar() {
+        this.txt_ope.clear();
+        this.txt_num.clear();
+        this.txt_ope.requestFocus();
+        this.txt_num.requestFocus();
     }
 }

@@ -1,13 +1,11 @@
 package Controller;
 
 import General.BD;
-import Modulos.Persona;
-import javafx.application.Application;
+import Modelos.Persona;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 public class FXMLPersona {
@@ -36,7 +34,9 @@ public class FXMLPersona {
                 String direccion = this.txt_direccion.getText();
                 Persona objPersona = new Persona(cedula, nombres, direccion);
                 BD.personas.add(objPersona);
-                System.out.println("Se registro con exito");
+//                System.out.println("Se registro con exito");
+                General.BD.personas.add(objPersona);
+                General.Mod_general.fun_mensajeInformacion("Se registro con exito");
                 for (Persona obj : BD.personas) {
                     System.out.println("CEDULA: " + obj.getNombres());
                 }
@@ -45,12 +45,39 @@ public class FXMLPersona {
                 System.out.println("Datos sin validar");
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            General.Mod_general.fun_mensajeInformacion(e.getMessage());
         }
     }
 
     private boolean fun_validar() {
-        return !txt_cedula.getText().isEmpty() && !txt_nombre.getText().isEmpty() && !txt_direccion.getText().isEmpty();
+        /*
+        Nombre de la funcion:fun_validar
+        Descripcion: Valida que los campos que ingrese no esten vacios, retorna
+        Autor: Diana Melena
+        Fecha de creacion: 04/08/2025
+        Fecha de modificacion:
+         */
+        try {
+            if (this.txt_cedula.getText().isEmpty()) {
+                General.Mod_general.fun_mensajeInformacion("Cedula no puede estar vacio");
+                this.txt_cedula.requestFocus();
+                return false;
+            }
+            if (this.txt_nombre.getText().isEmpty()) {
+                General.Mod_general.fun_mensajeInformacion("Nombre no puede estar vacio");
+                this.txt_nombre.requestFocus();
+                return false;
+            }
+            if (this.txt_direccion.getText().isEmpty()) {
+                General.Mod_general.fun_mensajeInformacion("Dirección no puede estar vacio");
+                this.txt_direccion.requestFocus();
+                return false;
+            }
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+
     }
 
     private void acc_cancelar(ActionEvent event) {
@@ -74,6 +101,15 @@ public class FXMLPersona {
         //cerrar el formulario actual
         Stage myStage = (Stage) this.btn_cancelar.getScene().getWindow();
         myStage.close();
+    }
+
+    public void fun_limpiar() {
+        this.txt_cedula.clear();
+        this.txt_nombre.clear();
+        this.txt_direccion.clear();
+        this.txt_cedula.requestFocus();
+        this.txt_nombre.requestFocus();
+        this.txt_direccion.requestFocus();
     }
 }
 

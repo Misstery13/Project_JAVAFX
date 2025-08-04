@@ -1,4 +1,4 @@
-package Modulos;
+package Modelos;
 
 
 public class Telefono {

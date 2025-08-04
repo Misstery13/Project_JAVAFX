@@ -13,4 +13,6 @@ module com.example.ejemplo {
 
     opens com.example.ejemplo to javafx.fxml;
     exports com.example.ejemplo;
+    exports Controller;
+    opens Controller to javafx.fxml;
 }

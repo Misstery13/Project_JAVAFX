@@ -1,4 +1,4 @@
-package Modulos;
+package Modelos;
 
 import java.util.ArrayList;
 
@@ -42,5 +42,9 @@ public class Persona {
     }
     public void addTelefonos(Telefono objTelefono) {
         this.telefonos.add(objTelefono);
+    }
+
+    public String toString() {
+        return cedula + "-" + nombres;
     }
 }

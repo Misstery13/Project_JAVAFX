@@ -1,6 +1,6 @@
 package General;
 
-import Modulos.Persona;
+import Modelos.Persona;
 
 import java.util.ArrayList;
 

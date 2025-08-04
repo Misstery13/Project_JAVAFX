@@ -1,7 +1,7 @@
-package com.example.ejemplo;
+package Controller;
 
-import Modulos.Persona;
-import Modulos.Telefono;
+import Modelos.Persona;
+import Modelos.Telefono;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -10,12 +10,12 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HelloApplication extends Application {
+public class main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/Vistas/FXMLagenda.fxml"));
-            Pane ventana = (Pane) fxmlLoader.load();
+            FXMLLoader fxmlLoader = new FXMLLoader(main.class.getResource("/Vistas/FXMLagenda.fxml"));
+            Pane ventana = fxmlLoader.load();
             Scene scene = new Scene(ventana);
 //        stage.setTitle("Hello!");
             stage.setScene(scene);
