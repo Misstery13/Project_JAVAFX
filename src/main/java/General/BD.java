@@ -1,5 +1,7 @@
 package General;
 
+import Modulos.Persona;
+
 import java.util.ArrayList;
 
 public class BD {
