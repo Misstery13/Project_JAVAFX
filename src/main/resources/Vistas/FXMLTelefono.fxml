@@ -17,14 +17,14 @@
                <graphic>
                   <ImageView fitHeight="38.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../ICONS/guardar-el-archivo.png" />
+                        <Image url="@/ICONS/guardar-el-archivo.png" />
                      </image></ImageView>
                </graphic></Button>
             <Button fx:id="btn_salir" contentDisplay="BOTTOM" layoutX="396.0" layoutY="29.0" mnemonicParsing="false" onAction="#acc_btnsalir" prefHeight="67.0" prefWidth="82.0" text="SALIR">
                <graphic>
                   <ImageView fitHeight="35.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../ICONS/logout.png" />
+                        <Image url="@/ICONS/logout.png" />
                      </image></ImageView>
                </graphic></Button>
          </children>

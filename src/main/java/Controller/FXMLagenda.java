@@ -27,7 +27,7 @@ public class FXMLagenda {
     public void acc_btntelefono(ActionEvent actionEvent) {
         try {
             //abrir formulario principal
-            String directorio="/Vistas/";
+            String directorio= "/Vistas/";
             String formulario=directorio+"FXMLTelefono.fxml";
             FXMLLoader loader = new FXMLLoader(getClass().getResource(formulario));
             Parent root = loader.load();
@@ -50,7 +50,7 @@ public class FXMLagenda {
     @javafx.fxml.FXML
     public void acc_btnpersona(ActionEvent actionEvent) throws IOException {
         //abrir formulario principal
-        String directorio="/Vistas/";
+        String directorio= "/Vistas/";
         String formulario=directorio + "FXMLPersona.fxml";
         FXMLLoader loader = new FXMLLoader(getClass().getResource(formulario));
         Parent root=loader.load();

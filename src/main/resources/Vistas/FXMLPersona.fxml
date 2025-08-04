@@ -23,7 +23,7 @@
          <graphic>
             <ImageView fitHeight="150.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../ICONS/guardar-el-archivo.png" />
+                  <Image url="@/ICONS/guardar-el-archivo.png" />
                </image>
                <cursor>
                   <Cursor fx:constant="N_RESIZE" />
@@ -35,7 +35,7 @@
          <graphic>
             <ImageView fitHeight="150.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../ICONS/cancelar.png" />
+                  <Image url="@/ICONS/cancelar.png" />
                </image>
                <cursor>
                   <Cursor fx:constant="N_RESIZE" />
