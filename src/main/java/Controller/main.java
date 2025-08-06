@@ -33,6 +33,6 @@ public class main extends Application {
         System.out.println("Dirección: " + objPersona.getDireccion());
         Telefono objTelefono = new Telefono("CNT", "987654321");
         objPersona.addTelefonos(objTelefono);
-        System.out.println("TELEFONO: "+ objPersona.getTelefonos());
+        System.out.println("Telefono: "+ objPersona.getTelefonos());
     }
 }

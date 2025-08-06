@@ -26,7 +26,7 @@ public class FXMLTelefono
     private ComboBox<Persona> cbo_lista;
 
     @javafx.fxml.FXML
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    public void initialize() {
         // Inicializar el ComboBox con las personas
         this.cargarPersonas();
     }
@@ -49,10 +49,10 @@ public class FXMLTelefono
                 General.Mod_general.fun_mensajeInformacion("Se registro con exito");
                 this.fun_limpiar();
             } else {
-                System.out.println("Datos sin validar");
+                General.Mod_general.fun_mensajeError("Llene todos los campos");
             }
         } catch (Exception e) {
-            General.Mod_general.fun_mensajeError(e.getMessage());
+            General.Mod_general.fun_mensajeError("Seleccione una persona de la lista");
         }
     }
 
@@ -67,6 +67,7 @@ public class FXMLTelefono
     public void cargarPersonas() {
         try {
             //cargar las personas al combobox
+            this.cbo_lista.getItems().clear();
             this.cbo_lista.getItems().addAll(BD.personas);
         } catch (Exception e) {
             General.Mod_general.fun_mensajeInformacion(e.getMessage());

@@ -20,11 +20,11 @@
                         <Image url="@../ICONS/guardar-el-archivo.png" />
                      </image></ImageView>
                </graphic></Button>
-            <Button fx:id="btn_salir" contentDisplay="BOTTOM" layoutX="396.0" layoutY="29.0" mnemonicParsing="false" onAction="#acc_btnsalir" prefHeight="67.0" prefWidth="82.0" text="SALIR">
+            <Button fx:id="btn_salir" contentDisplay="BOTTOM" layoutX="396.0" layoutY="29.0" mnemonicParsing="false" onAction="#acc_btnsalir" prefHeight="67.0" prefWidth="82.0" text="CANCELAR">
                <graphic>
                   <ImageView fitHeight="35.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../ICONS/logout.png" />
+                        <Image url="@../ICONS/cancelar.png" />
                      </image></ImageView>
                </graphic></Button>
          </children>

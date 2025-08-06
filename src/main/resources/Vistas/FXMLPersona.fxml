@@ -8,18 +8,18 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.FXMLPersona">
    <children>
-      <Label layoutX="279.0" layoutY="38.0" text="Persona" textAlignment="CENTER">
+      <Label layoutX="250.0" layoutY="36.0" text="PERSONA" textAlignment="CENTER">
          <font>
             <Font size="23.0" />
          </font>
       </Label>
       <Label layoutX="92.0" layoutY="96.0" text="Cedula" />
       <Label layoutX="89.0" layoutY="133.0" text="Nombre" />
-      <TextField fx:id="txt_cedula" layoutX="164.0" layoutY="89.0" prefHeight="26.0" prefWidth="348.0" />
-      <TextField fx:id="txt_nombre" layoutX="164.0" layoutY="135.0" prefHeight="26.0" prefWidth="348.0" />
+      <TextField fx:id="txt_cedula" layoutX="164.0" layoutY="89.0" prefHeight="26.0" prefWidth="265.0" />
+      <TextField fx:id="txt_nombre" layoutX="164.0" layoutY="135.0" prefHeight="26.0" prefWidth="265.0" />
       <Label layoutX="89.0" layoutY="181.0" text="Direccion" />
-      <TextArea fx:id="txt_direccion" layoutX="164.0" layoutY="187.0" prefHeight="120.0" prefWidth="348.0" />
-      <Button fx:id="btn_guardar" layoutX="135.0" layoutY="319.0" mnemonicParsing="false" onAction="#acc_btnguardar" prefHeight="67.0" prefWidth="124.0" text="Guardar" textAlignment="CENTER">
+      <TextArea fx:id="txt_direccion" layoutX="164.0" layoutY="187.0" prefHeight="61.0" prefWidth="265.0" />
+      <Button fx:id="btn_guardar" layoutX="102.0" layoutY="319.0" mnemonicParsing="false" onAction="#acc_btnguardar" prefHeight="67.0" prefWidth="124.0" text="Guardar" textAlignment="CENTER">
          <graphic>
             <ImageView fitHeight="150.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -31,7 +31,7 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="btn_cancelar" alignment="CENTER" layoutX="380.0" layoutY="319.0" mnemonicParsing="false" onAction="#acc_btnsalir" prefHeight="67.0" prefWidth="124.0" text="Cancelar" textAlignment="CENTER">
+      <Button fx:id="btn_cancelar" alignment="CENTER" layoutX="367.0" layoutY="319.0" mnemonicParsing="false" onAction="#acc_btnsalir" prefHeight="67.0" prefWidth="124.0" text="Cancelar" textAlignment="CENTER">
          <graphic>
             <ImageView fitHeight="150.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -43,5 +43,6 @@
             </ImageView>
          </graphic>
       </Button>
+      <CheckBox fx:id="check_ced" layoutX="466.0" layoutY="94.0" mnemonicParsing="false" onAction="#acc_checkced" text="Validar Cedula" />
    </children>
 </AnchorPane>
