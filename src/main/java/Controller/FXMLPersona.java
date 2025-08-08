@@ -35,7 +35,7 @@ public class FXMLPersona {
 
     }
 
-    @Deprecated
+    @FXML
     private void acc_grabar(ActionEvent event) {
         try {
             if (fun_validar()) {

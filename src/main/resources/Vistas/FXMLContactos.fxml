@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Vistas.FXMLContactos">
+   <children>
+      <TableView fx:id="cod_tabla" layoutX="42.0" layoutY="100.0" prefHeight="200.0" prefWidth="517.0">
+        <columns>
+          <TableColumn fx:id="cod_cedula" prefWidth="109.0" text="CEDULA" />
+          <TableColumn fx:id="cod_nombres" prefWidth="192.0" text="NOMBRES" />
+            <TableColumn fx:id="cod_direccion" prefWidth="215.0" text="DIRECCION" />
+        </columns>
+      </TableView>
+      <Label layoutX="262.0" layoutY="44.0" text="Mis Contactos" />
+      <Button fx:id="btn_salir" layoutX="402.0" layoutY="330.0" mnemonicParsing="false" onAction="#acc_btnsalir" text="Salir">
+         <graphic>
+            <ImageView fx:id="btn_cancelar" fitHeight="49.0" fitWidth="48.0" onDragDetected="#acc_cancelar" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../ICONS/logout.png" />
+               </image></ImageView>
+         </graphic></Button>
+   </children>
+</AnchorPane>

@@ -1,5 +1,6 @@
 package Controller;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -18,6 +19,10 @@ public class FXMLagenda {
     private Button btn_persona;
     @javafx.fxml.FXML
     private Button btn_telefono;
+    @javafx.fxml.FXML
+    private Button btn_contactos;
+    @javafx.fxml.FXML
+    private Button btn_consultar;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -45,6 +50,7 @@ public class FXMLagenda {
         //cerrar el formulario actual
         Stage myStage = (Stage) this.btn_salir.getScene().getWindow();
         myStage.close();
+        Platform.exit();
     }
 
     @javafx.fxml.FXML
@@ -81,6 +87,40 @@ public class FXMLagenda {
     }
 
 
+    @javafx.fxml.FXML
+    public void acc_btncontactos(ActionEvent actionEvent) throws IOException {
+        //abrir formulario principal
+        String directorio= "/Vistas/";
+        String formulario=directorio + "FXMLContactos.fxml";
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(formulario));
+        Parent root=loader.load();
+        //asociar con la pantalla Personas
+        FXMLPersona controlador=loader.getController();
+        Scene scene=new Scene(root);
+        Stage stage=new Stage();
+        stage.setScene(scene);
+        stage.setOnCloseRequest(eh->controlador.cerrarFormulario());
+        Stage myStage=(Stage) this.btn_salir.getScene().getWindow();
+        myStage.close();
+        stage.show();
+    }
+
+    @javafx.fxml.FXML
+    public void acc_btnconsultar(ActionEvent actionEvent) throws IOException {
+        String directorio= "/Vistas/";
+        String formulario=directorio + "FXMLConsultar.fxml";
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(formulario));
+        Parent root=loader.load();
+        //asociar con la pantalla Personas
+        FXMLPersona controlador=loader.getController();
+        Scene scene=new Scene(root);
+        Stage stage=new Stage();
+        stage.setScene(scene);
+        stage.setOnCloseRequest(eh->controlador.cerrarFormulario());
+        Stage myStage=(Stage) this.btn_salir.getScene().getWindow();
+        myStage.close();
+        stage.show();
+    }
 }
 
 
